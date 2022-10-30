@@ -11,6 +11,9 @@ export var hunter= 0
 export var gold = 0
 export var fighter= 0
 
+export var science=0
+export var scientist=0
+
 var laborcost=25
 export var totallabors=3
 export var totalfighters=0
@@ -21,6 +24,8 @@ export var minerboost=1
 export var minerboostlevel=0
 export var fighterboost=1
 export var fighterboostlevel=0
+export var scienceboost=1
+export var scienceboostlevel=0
 
 
 onready var timer = get_parent().get_node("Timer")
@@ -39,6 +44,7 @@ func _on_Timer_timeout():
 	stone= stone + 1*miner*minerboost
 	food= food + 1*hunter*hunterboost
 	gold = gold + 0.1*fighter*fighterboost
+	science = science + 1*scientist*scienceboost
 	pass # Replace with function body.
 
 
@@ -86,6 +92,7 @@ func _on_buy_labor_pressed():
 func _on_dec_fighter_pressed():
 	if fighter>0:
 		fighter-=1
+		stone+=25
 		totallabors+=1
 	pass # Replace with function body.
 
@@ -103,7 +110,7 @@ func _on_get_a_fighter_pressed():
 		stone-=25
 		totallabors-=1
 		totalfighters +=1 
-		get_parent().get_node("buy_labor").text="get labor("+String(laborcost)+" food)"
+		get_parent().get_node("buy_labor").text="get labor("+String(int(laborcost))+" food)"
 	pass # Replace with function body.
 
 
@@ -127,7 +134,21 @@ func _on_boost_fighters_pressed():
 	if gold>150:
 		fighterboost+=0.25
 		fighterboostlevel+=1
-		gold-=50
+		gold-=150
 	pass # Replace with function body.
 
 
+
+
+func _on_inc_scientist_pressed():
+	if totallabors>0:
+		scientist+=1
+		totallabors-=1
+	pass # Replace with function body.
+
+
+func _on_dec_scientist_pressed():
+	if scientist>0:
+		scientist-=1
+		totallabors+=1
+	pass # Replace with function body.
