@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://#2 - Transparent Icons & Drop Shadow.png" type="Texture" id=1]
 [ext_resource path="res://RichTextLabel.gd" type="Script" id=2]
@@ -14,11 +14,18 @@
 [ext_resource path="res://HunterBoostLvl.gd" type="Script" id=12]
 [ext_resource path="res://FighterBoostLvl.gd" type="Script" id=13]
 [ext_resource path="res://MinerBoostLvl.gd" type="Script" id=14]
-[ext_resource path="res://35376-4-glow-file-thumb.png" type="Texture" id=15]
+[ext_resource path="res://Roboto-Light.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://era_upgrade.gd" type="Script" id=16]
 [ext_resource path="res://science_gathered.gd" type="Script" id=17]
 [ext_resource path="res://Scientists.gd" type="Script" id=18]
-[ext_resource path="res://ScientistBoostLvl.gd" type="Script" id=19]
+[ext_resource path="res://MenuItem01.png" type="Texture" id=19]
+[ext_resource path="res://dayscounter.gd" type="Script" id=20]
+[ext_resource path="res://populationcounter.gd" type="Script" id=21]
+[ext_resource path="res://free_scientist.gd" type="Script" id=22]
+[ext_resource path="res://MessageBox01.png" type="Texture" id=23]
+[ext_resource path="res://Decor.png" type="Texture" id=24]
+[ext_resource path="res://MiniButton18.png" type="Texture" id=25]
+[ext_resource path="res://back.png" type="Texture" id=26]
 
 [sub_resource type="TileSet" id=1]
 0/name = "#2 - Transparent Icons & Drop Shadow.png 0"
@@ -637,6 +644,34 @@
 43/shape_one_way_margin = 0.0
 43/shapes = [  ]
 43/z_index = 0
+44/name = "#2 - Transparent Icons & Drop Shadow.png 44"
+44/texture = ExtResource( 1 )
+44/tex_offset = Vector2( 0, 0 )
+44/modulate = Color( 1, 1, 1, 1 )
+44/region = Rect2( 480, 320, 32, 32 )
+44/tile_mode = 0
+44/occluder_offset = Vector2( 0, 0 )
+44/navigation_offset = Vector2( 0, 0 )
+44/shape_offset = Vector2( 0, 0 )
+44/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+44/shape_one_way = false
+44/shape_one_way_margin = 0.0
+44/shapes = [  ]
+44/z_index = 0
+45/name = "#2 - Transparent Icons & Drop Shadow.png 45"
+45/texture = ExtResource( 1 )
+45/tex_offset = Vector2( 0, 0 )
+45/modulate = Color( 1, 1, 1, 1 )
+45/region = Rect2( 96, 128, 32, 32 )
+45/tile_mode = 0
+45/occluder_offset = Vector2( 0, 0 )
+45/navigation_offset = Vector2( 0, 0 )
+45/shape_offset = Vector2( 0, 0 )
+45/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+45/shape_one_way = false
+45/shape_one_way_margin = 0.0
+45/shapes = [  ]
+45/z_index = 0
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.662745, 0.188235, 0.239216, 1 )
@@ -647,22 +682,17 @@ bg_color = Color( 0.553223, 0.198814, 0.235943, 1 )
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.556863, 0.145098, 0.188235, 1 )
 
-[node name="Main" type="Node2D"]
-position = Vector2( 30, 64 )
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 15 )
 
-[node name="entereraglow" type="Sprite" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.411765 )
-self_modulate = Color( 1, 1, 1, 0.584314 )
-position = Vector2( 184, 48 )
-scale = Vector2( 2.137, 0.4 )
-texture = ExtResource( 15 )
+[node name="Main" type="Node2D"]
+position = Vector2( 78, 64 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 2, 20, 0, 10, 5, 0, 13, 14, 0, 16, 29, 0, 65546, 1, 0, 65549, 28, 0, 65552, 30, 0, 196610, 6, 0, 196618, 16, 0, 327681, 13, 0, 327682, 8, 0, 327690, 21, 0, 327698, 35, 0, 393226, 22, 0, 393234, 37, 0, 458753, 13, 0, 458754, 0, 0, 458762, 23, 0, 458770, 38, 0, 524298, 26, 0, 524306, 36, 0, 589825, 13, 0, 589826, 10, 0, 589834, 25, 0, 589842, 39, 0, 720897, 13, 0, 720898, 33, 0 )
+tile_data = PoolIntArray( 2, 20, 0, 10, 5, 0, 13, 14, 0, 16, 29, 0, 19, 44, 0, 65546, 1, 0, 65549, 28, 0, 65552, 30, 0, 65555, 45, 0, 196610, 6, 0, 196618, 16, 0, 196627, 34, 0, 327681, 13, 0, 327682, 8, 0, 327690, 21, 0, 327699, 35, 0, 393226, 22, 0, 393235, 37, 0, 458753, 13, 0, 458754, 0, 0, 458762, 23, 0, 458771, 38, 0, 524298, 26, 0, 524307, 36, 0, 589825, 13, 0, 589826, 10, 0, 589834, 25, 0, 589843, 39, 0, 720898, 33, 0 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05
@@ -695,9 +725,9 @@ script = ExtResource( 12 )
 
 [node name="MinerBoostLvl" type="RichTextLabel" parent="."]
 margin_left = 36.0
-margin_top = 256.0
+margin_top = 257.0
 margin_right = 76.0
-margin_bottom = 275.0
+margin_bottom = 276.0
 text = "0"
 script = ExtResource( 14 )
 
@@ -708,14 +738,6 @@ margin_right = 76.0
 margin_bottom = 339.0
 text = "0"
 script = ExtResource( 13 )
-
-[node name="ScientistBoostLvl" type="RichTextLabel" parent="."]
-margin_left = 36.0
-margin_top = 384.0
-margin_right = 76.0
-margin_bottom = 403.0
-text = "0"
-script = ExtResource( 19 )
 
 [node name="Hunters" type="RichTextLabel" parent="."]
 margin_left = 76.0
@@ -769,9 +791,19 @@ align = 0
 [node name="get a fighter" type="Button" parent="."]
 margin_left = 358.0
 margin_top = 104.0
-margin_right = 624.0
+margin_right = 562.0
 margin_bottom = 124.0
-text = "get soldier(50 food + 25 stone +1 labor)"
+text = "get soldier(50fd+25st+1labor)"
+clip_text = true
+align = 0
+
+[node name="buy_scientist" type="Button" parent="."]
+margin_left = 644.0
+margin_top = 104.0
+margin_right = 848.0
+margin_bottom = 124.0
+disabled = true
+text = "get scientst(1000gold+1labor)"
 clip_text = true
 align = 0
 
@@ -857,6 +889,14 @@ margin_bottom = 144.0
 text = "0"
 script = ExtResource( 8 )
 
+[node name="free_scientist" type="RichTextLabel" parent="."]
+margin_left = 621.0
+margin_top = 128.0
+margin_right = 676.0
+margin_bottom = 144.0
+text = "0"
+script = ExtResource( 22 )
+
 [node name="gold_gathered" type="RichTextLabel" parent="."]
 margin_left = 450.0
 margin_top = 8.0
@@ -866,7 +906,6 @@ text = "0"
 script = ExtResource( 10 )
 
 [node name="science_gathered" type="RichTextLabel" parent="."]
-visible = false
 margin_left = 450.0
 margin_top = 40.0
 margin_right = 508.0
@@ -890,12 +929,13 @@ margin_left = 544.0
 margin_top = 40.0
 margin_right = 602.0
 margin_bottom = 56.0
+rect_scale = Vector2( 1.00555, 0.934562 )
 text = "0"
 
 [node name="boost_miners" type="Button" parent="."]
 margin_left = 358.0
 margin_top = 200.0
-margin_right = 544.0
+margin_right = 562.0
 margin_bottom = 220.0
 text = "boost miners(50 gold)     "
 align = 0
@@ -904,66 +944,66 @@ align = 0
 anchor_bottom = 1.0
 margin_left = 358.0
 margin_top = 168.0
-margin_right = 544.0
+margin_right = 562.0
 margin_bottom = 188.0
 text = "boost hunters(100 gold)  "
 align = 0
 
 [node name="boost3" type="Button" parent="."]
 anchor_bottom = 1.0
-margin_left = 610.0
-margin_top = 168.0
-margin_right = 796.0
-margin_bottom = 188.0
+margin_left = 644.0
+margin_top = 172.0
+margin_right = 830.0
+margin_bottom = 192.0
 text = "boost hunters(100 gold)  "
 align = 0
 
 [node name="boost4" type="Button" parent="."]
 anchor_bottom = 1.0
-margin_left = 610.0
-margin_top = 168.0
-margin_right = 796.0
-margin_bottom = 188.0
+margin_left = 644.0
+margin_top = 172.0
+margin_right = 830.0
+margin_bottom = 192.0
 disabled = true
 text = "boost3(1000 science)"
 align = 0
 
 [node name="boost5" type="Button" parent="."]
 anchor_bottom = 1.0
-margin_left = 610.0
-margin_top = 200.0
-margin_right = 796.0
-margin_bottom = 220.0
+margin_left = 644.0
+margin_top = 204.0
+margin_right = 830.0
+margin_bottom = 224.0
 disabled = true
 text = "boost3(1000 science)"
 align = 0
 
 [node name="boost6" type="Button" parent="."]
 anchor_bottom = 1.0
-margin_left = 610.0
-margin_top = 232.0
-margin_right = 796.0
-margin_bottom = 252.0
+margin_left = 644.0
+margin_top = 236.0
+margin_right = 830.0
+margin_bottom = 256.0
 disabled = true
 text = "boost3(1000 science)"
 align = 0
 
 [node name="boost7" type="Button" parent="."]
 anchor_bottom = 1.0
-margin_left = 610.0
-margin_top = 264.0
-margin_right = 796.0
-margin_bottom = 284.0
+margin_left = 644.0
+margin_top = 268.0
+margin_right = 830.0
+margin_bottom = 288.0
 disabled = true
 text = "boost3(1000 science)"
 align = 0
 
 [node name="boost9" type="Button" parent="."]
 anchor_bottom = 1.0
-margin_left = 610.0
-margin_top = 296.0
-margin_right = 796.0
-margin_bottom = 316.0
+margin_left = 644.0
+margin_top = 300.0
+margin_right = 830.0
+margin_bottom = 320.0
 disabled = true
 text = "boost3(1000 science)"
 align = 0
@@ -971,34 +1011,35 @@ align = 0
 [node name="boost_fighters" type="Button" parent="."]
 margin_left = 358.0
 margin_top = 232.0
-margin_right = 544.0
+margin_right = 562.0
 margin_bottom = 252.0
-text = "boost soldiers (150 gold)"
+text = "boost soldiers(150 gold)"
 align = 0
 
 [node name="era3blocker" type="Button" parent="."]
 self_modulate = Color( 1, 1, 1, 0.717647 )
-margin_left = 568.0
-margin_top = 156.0
-margin_right = 810.0
-margin_bottom = 329.0
+margin_left = 610.0
+margin_top = 152.0
+margin_right = 852.0
+margin_bottom = 325.0
+disabled = true
 
-[node name="boost2_hunters" type="Button" parent="."]
+[node name="science_booster1" type="Button" parent="."]
 margin_left = 358.0
 margin_top = 264.0
-margin_right = 544.0
+margin_right = 562.0
 margin_bottom = 284.0
 disabled = true
-text = "boost2 hunters(1000 gold)"
+text = "upgr boosts1(150 science)"
 align = 0
 
-[node name="boost2_fighters" type="Button" parent="."]
+[node name="science_booster2" type="Button" parent="."]
 margin_left = 358.0
 margin_top = 296.0
-margin_right = 544.0
+margin_right = 562.0
 margin_bottom = 316.0
 disabled = true
-text = "boost2 soldiers(1200 gold)"
+text = "upgr boosts2(300 science)"
 align = 0
 
 [node name="FighterBoostBlocker" type="Button" parent="."]
@@ -1010,11 +1051,19 @@ margin_bottom = 319.0
 disabled = true
 
 [node name="ScienceBoostBlocker" type="Button" parent="."]
-modulate = Color( 1, 1, 1, 0.47451 )
+modulate = Color( 1, 1, 1, 0.870588 )
 margin_left = 33.0
-margin_top = 355.0
-margin_right = 98.0
-margin_bottom = 384.0
+margin_top = 348.0
+margin_right = 286.0
+margin_bottom = 397.0
+disabled = true
+
+[node name="ScientistBlocker" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.870588 )
+margin_left = 610.0
+margin_top = 91.0
+margin_right = 852.0
+margin_bottom = 144.0
 disabled = true
 
 [node name="HuntersBoostBlocker" type="Button" parent="."]
@@ -1025,12 +1074,12 @@ margin_right = 351.0
 margin_bottom = 287.0
 disabled = true
 
-[node name="ScienceBlocker" type="Button" parent="."]
-modulate = Color( 1, 1, 1, 0.623529 )
+[node name="unlockera_5" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.776471 )
 margin_left = 417.0
 margin_top = 32.0
-margin_right = 446.0
-margin_bottom = 61.0
+margin_right = 464.0
+margin_bottom = 64.0
 disabled = true
 
 [node name="Button8" type="Button" parent="."]
@@ -1051,18 +1100,41 @@ disabled = true
 
 [node name="unlockera2" type="RichTextLabel" parent="."]
 self_modulate = Color( 0.87451, 0.87451, 0.87451, 1 )
-margin_left = 286.0
-margin_top = 362.0
-margin_right = 408.0
-margin_bottom = 385.0
+margin_left = 117.0
+margin_top = 364.0
+margin_right = 204.0
+margin_bottom = 387.0
+text = "unlock era2"
+
+[node name="unlockera2_2" type="RichTextLabel" parent="."]
+self_modulate = Color( 0.87451, 0.87451, 0.87451, 1 )
+margin_left = 689.0
+margin_top = 109.0
+margin_right = 776.0
+margin_bottom = 132.0
+text = "unlock era2"
+
+[node name="unlockera2_3" type="RichTextLabel" parent="."]
+self_modulate = Color( 0.87451, 0.87451, 0.87451, 1 )
+margin_left = 689.0
+margin_top = 109.0
+margin_right = 776.0
+margin_bottom = 132.0
+text = "unlock era2"
+
+[node name="unlockera2_4" type="RichTextLabel" parent="."]
+margin_left = 419.0
+margin_top = 34.0
+margin_right = 470.0
+margin_bottom = 64.0
 text = "unlock era2"
 
 [node name="unlockera3" type="RichTextLabel" parent="."]
 self_modulate = Color( 0.87451, 0.87451, 0.87451, 1 )
-margin_left = 642.0
-margin_top = 232.0
-margin_right = 764.0
-margin_bottom = 255.0
+margin_left = 676.0
+margin_top = 236.0
+margin_right = 798.0
+margin_bottom = 259.0
 text = "unlock era3"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -1086,12 +1158,128 @@ custom_styles/normal = SubResource( 4 )
 text = "enter era 2"
 script = ExtResource( 16 )
 
+[node name="dayscounter" type="RichTextLabel" parent="."]
+margin_left = 642.0
+margin_top = 8.0
+margin_right = 882.0
+margin_bottom = 31.0
+custom_fonts/mono_font = SubResource( 5 )
+text = "0000000 days passed."
+script = ExtResource( 20 )
+
+[node name="populationcounter" type="RichTextLabel" parent="."]
+margin_left = 642.0
+margin_top = 40.0
+margin_right = 882.0
+margin_bottom = 64.0
+text = "people lives here"
+script = ExtResource( 21 )
+
+[node name="givegold" type="Button" parent="."]
+margin_left = 583.0
+margin_top = 384.0
+margin_right = 825.0
+margin_bottom = 404.0
+text = "give 10000gold"
+
+[node name="give food" type="Button" parent="."]
+margin_left = 583.0
+margin_top = 421.0
+margin_right = 825.0
+margin_bottom = 441.0
+text = "give 10000 food"
+
+[node name="Milestone1" type="WindowDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1070.0
+margin_top = -600.0
+margin_right = -411.0
+margin_bottom = -303.0
+window_title = "select your reward"
+
+[node name="Back" type="Sprite" parent="Milestone1"]
+modulate = Color( 1, 1, 1, 0.639216 )
+position = Vector2( 339.5, 176.5 )
+scale = Vector2( 5.79913, 3.9337 )
+texture = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="MessageBox01" type="Sprite" parent="Milestone1"]
+position = Vector2( 332, 136 )
+scale = Vector2( 1.66, 0.888889 )
+texture = ExtResource( 23 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="MenuItem01" type="Sprite" parent="Milestone1"]
+position = Vector2( 184, 184 )
+scale = Vector2( 1.4863, 1.45455 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Rewards" type="Button" parent="Milestone1"]
+margin_left = 128.0
+margin_top = 200.0
+margin_right = 240.0
+margin_bottom = 232.0
+text = "get 1000 gold"
+flat = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Milestone1"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -103.5
+margin_top = 2.0
+margin_right = 103.5
+margin_bottom = 42.0
+rect_rotation = -0.454283
+text = "SELEC YOUR MILESTONE AWARD"
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Decor" type="Sprite" parent="Milestone1"]
+position = Vector2( 328, 8.25 )
+scale = Vector2( 3.21608, 0.753968 )
+texture = ExtResource( 24 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="MiniButton18" type="Sprite" parent="Milestone1"]
+position = Vector2( 648, -8 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
 [connection signal="timeout" from="Timer" to="RichTextLabel" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Button" to="RichTextLabel" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button" to="Miners" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="RichTextLabel" method="_on_Button2_pressed"]
 [connection signal="pressed" from="buy_labor" to="RichTextLabel" method="_on_buy_labor_pressed"]
 [connection signal="pressed" from="get a fighter" to="RichTextLabel" method="_on_get_a_fighter_pressed"]
+[connection signal="pressed" from="buy_scientist" to="RichTextLabel" method="_on_buy_scientist_pressed"]
 [connection signal="pressed" from="dec_hunter" to="RichTextLabel" method="_on_dec_hunter_pressed"]
 [connection signal="pressed" from="inc_hunter" to="RichTextLabel" method="_on_inc_hunter_pressed"]
 [connection signal="pressed" from="dec_fighter" to="RichTextLabel" method="_on_dec_fighter_pressed"]
@@ -1101,4 +1289,9 @@ script = ExtResource( 16 )
 [connection signal="pressed" from="boost_miners" to="RichTextLabel" method="_on_boost_miners_pressed"]
 [connection signal="pressed" from="boost_hunters" to="RichTextLabel" method="_on_boost_hunters_pressed"]
 [connection signal="pressed" from="boost_fighters" to="RichTextLabel" method="_on_boost_fighters_pressed"]
+[connection signal="pressed" from="science_booster1" to="RichTextLabel" method="_on_science_booster1_pressed"]
+[connection signal="pressed" from="science_booster2" to="RichTextLabel" method="_on_science_booster2_pressed"]
 [connection signal="pressed" from="era_upgrade" to="ProgressBar" method="_on_era_upgrade_pressed"]
+[connection signal="pressed" from="givegold" to="RichTextLabel" method="_on_givegold_pressed"]
+[connection signal="pressed" from="give food" to="RichTextLabel" method="_on_give_food_pressed"]
+[connection signal="pressed" from="Milestone1/Rewards" to="RichTextLabel" method="_on_Rewards_pressed"]

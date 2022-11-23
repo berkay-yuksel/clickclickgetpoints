@@ -17,6 +17,7 @@ export var scientist=0
 var laborcost=25
 export var totallabors=3
 export var totalfighters=0
+export var totalscientist=0
 
 export var hunterboost= 1
 export var hunterboostlevel=0
@@ -24,9 +25,12 @@ export var minerboost=1
 export var minerboostlevel=0
 export var fighterboost=1
 export var fighterboostlevel=0
-export var scienceboost=1
-export var scienceboostlevel=0
 
+export var scienceboost=1
+export var sciensboostaddition=1;
+
+export var clock=0;
+export var population=3;
 
 onready var timer = get_parent().get_node("Timer")
 onready var buy_labor_button = get_parent().get_node("buy_labor")
@@ -39,12 +43,14 @@ func _ready():
 	pass # Replace with function body.
 
 
+
 func _on_Timer_timeout():
 	set_text(String(stone)+"               "+String(stone)+"               "+String(totallabors))
-	stone= stone + 1*miner*minerboost
-	food= food + 1*hunter*hunterboost
-	gold = gold + 0.1*fighter*fighterboost
+	stone= stone + 1*miner*minerboost*scienceboost*sciensboostaddition
+	food= food + 1*hunter*hunterboost*scienceboost*sciensboostaddition
+	gold = gold + 0.1*fighter*fighterboost*scienceboost*sciensboostaddition
 	science = science + 1*scientist*scienceboost
+	clock+=1;
 	pass # Replace with function body.
 
 
@@ -85,6 +91,7 @@ func _on_buy_labor_pressed():
 		food=food-laborcost
 		totallabors+=1
 		laborcost*=1.17
+		population+=1
 		get_parent().get_node("buy_labor").text="get labor("+String(int(laborcost))+" food)"
 	pass # Replace with function body.
 
@@ -141,14 +148,55 @@ func _on_boost_fighters_pressed():
 
 
 func _on_inc_scientist_pressed():
-	if totallabors>0:
+	if totalscientist>0:
 		scientist+=1
-		totallabors-=1
+		totalscientist-=1
 	pass # Replace with function body.
 
 
 func _on_dec_scientist_pressed():
 	if scientist>0:
 		scientist-=1
-		totallabors+=1
+		totalscientist+=1
+		gold+=1000
+	pass # Replace with function body.
+
+
+func _on_science_booster2_pressed():
+	if science>300:
+		sciensboostaddition*=1.75
+		science-=300
+	pass # Replace with function body.
+
+
+
+func _on_science_booster1_pressed():
+	if science>150:
+		sciensboostaddition*=1.5
+		science-=150
+	pass # Replace with function body.
+
+
+func _on_buy_scientist_pressed():
+	if gold>=1000 && totallabors >= 1:
+		totallabors-=1
+		totalscientist+=1
+		gold-=1000
+	pass # Replace with function body.
+
+
+func _on_givegold_pressed():
+	gold+=10000
+	pass # Replace with function body.
+
+
+func _on_give_food_pressed():
+	food+=10000
+	pass # Replace with function body.
+
+
+func _on_Rewards_pressed():
+	gold+=1000
+	get_parent().get_node("Milestone1").visible=false
+	timer.start()
 	pass # Replace with function body.

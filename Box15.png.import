@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/#2 - Transparent Icons & Drop Shadow.png-4536b5a49ecae917349c969539c3139d.stex"
+path="res://.import/Box15.png-323d882e65f1cb35545bd38306f6090d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://#2 - Transparent Icons & Drop Shadow.png"
-dest_files=[ "res://.import/#2 - Transparent Icons & Drop Shadow.png-4536b5a49ecae917349c969539c3139d.stex" ]
+source_file="res://Box15.png"
+dest_files=[ "res://.import/Box15.png-323d882e65f1cb35545bd38306f6090d.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/#2 - Transparent Icons & Drop Shadow.png-4536b5a49ecae917349c969539c3139d.stex"
+path="res://.import/MiniButton18.png-79e9592bfb6842fb66270150858f7ac1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://#2 - Transparent Icons & Drop Shadow.png"
-dest_files=[ "res://.import/#2 - Transparent Icons & Drop Shadow.png-4536b5a49ecae917349c969539c3139d.stex" ]
+source_file="res://MiniButton18.png"
+dest_files=[ "res://.import/MiniButton18.png-79e9592bfb6842fb66270150858f7ac1.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
