@@ -24,19 +24,13 @@ func _on_era_upgrade_pressed():
 		self.max_value= self.max_value + 50 * a
 		get_parent().get_node("inc_scientist").disabled=false
 		get_parent().get_node("dec_scientist").disabled=false
-		get_parent().get_node("science_booster2").disabled=false
 		get_parent().get_node("science_booster1").disabled=false
 		get_parent().get_node("buy_scientist").disabled=false
-		get_parent().get_node("FighterBoostBlocker").visible=false
-		get_parent().get_node("HuntersBoostBlocker").visible=false
 		get_parent().get_node("science_gathered").visible=true
 		get_parent().get_node("Scientists").visible=true
 		get_parent().get_node("ScienceBoostBlocker").visible=false
 		get_parent().get_node("unlockera2").visible=false
 		get_parent().get_node("unlockera2_2").visible=false
-		get_parent().get_node("unlockera2_3").visible=false
-		get_parent().get_node("unlockera2_4").visible=false
-#		get_parent().get_node("unlockera2_5").visible=false
 		get_parent().get_node("ScientistBlocker").visible=false
 		get_parent().get_node("era_upgrade").set_text("enter era3")
 		 

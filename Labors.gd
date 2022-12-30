@@ -10,8 +10,10 @@ extends RichTextLabel
 func _ready():
 	pass # Replace with function body.
 
+
 func _process(delta):
-	self.set_text(get_parent().get_node("RichTextLabel")._format_number(int(get_parent().get_node("RichTextLabel").science)))
+	self.set_text(String(get_parent().get_node("RichTextLabel").totallabors))
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
