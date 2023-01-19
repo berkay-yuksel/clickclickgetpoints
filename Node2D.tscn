@@ -1362,6 +1362,13 @@ margin_bottom = 296.0
 text = "tech tree olsun bilimle filan gelisen.  tech tree ile bir takim seyleri ögrensinler ve bu ögrendikleri + bir takıim materyaller ile alttaki resimli yerlere gelistirmeler yapsinler.  bu gelistirmeler economy, military, academic, cultural, political olur. cesitli bonuslar kazandıirir. eger birinde full bina yapilirse o kisi o konuda oyunu kazanişlir. belki boostlara sinir konulup tech tree ile sinirlar arttirilebilir.
 belki text base bir rpg kismi da eklenebilir."
 
+[node name="RichTextLabel7" type="RichTextLabel" parent="."]
+margin_left = 897.0
+margin_top = 120.0
+margin_right = 1289.0
+margin_bottom = 242.0
+text = "asdsadasdasd"
+
 [node name="MsLUxoBy0ytho5CeNqMj--1--uqyyg" type="Sprite" parent="."]
 position = Vector2( 938.75, 425 )
 scale = Vector2( 0.290039, 0.242187 )
