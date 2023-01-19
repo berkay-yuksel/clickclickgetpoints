@@ -15,7 +15,7 @@ func _ready():
 func _process(delta):
 	self.set_text(String(get_parent().get_node("RichTextLabel").clock)+"  days passed.")
 	match get_parent().get_node("RichTextLabel").clock:
-			10:
+			100:
 				get_parent().get_node("bonuses").set_text(String("Build trade center.(Reward: 10000 Science)"))
 				if get_parent().get_node("RichTextLabel").population>10:
 					get_parent().get_node("RichTextLabel").gold=+1000
@@ -25,7 +25,7 @@ func _process(delta):
 					get_parent().get_node("Failure").visible=true
 					pass
 #				get_parent().get_node("RichTextLabel").timer.stop()
-			35:
+			350:
 				get_parent().get_node("Success").visible=false
 				get_parent().get_node("Success").get_node("Message").set_text(String("Success!! You've earned 10000 Science"))
 				get_parent().get_node("Failure").visible=false

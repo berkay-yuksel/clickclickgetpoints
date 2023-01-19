@@ -203,3 +203,24 @@ func _on_Rewards_pressed():
 	get_parent().get_node("Milestone1").visible=false
 	timer.start()
 	pass # Replace with function body.
+
+
+
+func _on_open_ttree_pressed():
+	timer.stop()
+	get_parent().get_node("TechTree").visible=true
+	pass # Replace with function body.
+
+
+func _on_close_ttree_pressed():
+	timer.start()
+	get_parent().get_node("TechTree").visible=false
+	pass # Replace with function body.
+
+
+
+
+func _on_tech_tree_open_pressed():
+	timer.stop()
+	get_parent().get_node("TechTree").visible=true
+	pass # Replace with function body.
