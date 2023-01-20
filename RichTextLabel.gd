@@ -224,3 +224,5 @@ func _on_tech_tree_open_pressed():
 	timer.stop()
 	get_parent().get_node("TechTree").visible=true
 	pass # Replace with function body.
+
+
