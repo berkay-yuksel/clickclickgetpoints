@@ -1411,6 +1411,7 @@ margin_bottom = 124.0
 text = "tech_tree"
 
 [node name="TechTree" type="Sprite" parent="."]
+visible = false
 position = Vector2( 528, 272 )
 scale = Vector2( 2.56, 1.78889 )
 texture = ExtResource( 24 )
